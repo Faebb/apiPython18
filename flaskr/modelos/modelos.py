@@ -29,11 +29,6 @@ class Album(db.Model):
     canciones = db.relationship('Cancion', secondary='album_cancion', back_populates='albunes')
     __tables_args__=(db.UniqueConstraint("usuario","titulo", name="titulo_unico_album"),)
 
-
-
-
-
-
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(128))
